@@ -1,0 +1,6 @@
+services:
+    flaskex:
+        container_name: flaskex
+        build: .
+        ports:
+            - 8000:8000

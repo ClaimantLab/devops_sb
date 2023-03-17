@@ -1,0 +1,5 @@
+При запуске приложения возникала ошибка:
+AttributeError: module 'wtforms.validators' has no attribute 'required'
+Это связано с тем, что в файле requirements.txt перечислены библиотеки без указания версий, и в том числе библиотека WTForms.
+В свою очередь команда pip install –r requirements.txt устанавливает последние и актуальные на текущий момент библиотеки и зависимости (WTForms==3.0.1).
+Соответственно, что бы проект запустился необходимо в файле forms.py  заменить конструкцию validators.required(), которая упразднена с версии WTForms 1.0.2 библиотеки, на validators.InputRequired().
